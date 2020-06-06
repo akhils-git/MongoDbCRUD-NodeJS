@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
 const express = require("express");
-const student = require("./Model/Student");
 const studentRouter = require("./Routers/student-router");
+
 const app = new express();
-//app.use(express.json());
+
+app.use(express.json());
 
 mongoose.connect(
   "mongodb+srv://root:1234@iti-dbmyx.mongodb.net/CRUDOprations",
@@ -18,50 +19,5 @@ mongoose.connect(
 );
 
 app.use("/college", studentRouter);
-
-app.get("/", (req, res) => {
-  res.send("working");
-});
-
-// app.post("/save", (req, res) => {
-//   var savedata = new person({
-//     name: req.body.name,
-//     age: req.body.age,
-//     createdAt: Date.now(),
-//   }).save(function (err, result) {
-//     if (err) throw err;
-//     if (result) {
-//       res.json(result);
-//     }
-//   });
-// });
-
-// app.get("/find/:name", cors(), (req, res) => {
-//   var query = req.params.query;
-//   console.log(query);
-//   person.find(
-//     {
-//       request: query,
-//     },
-//     function (err, result) {
-//       if (err) throw err;
-//       if (result) {
-//         res.json(result);
-//       } else {
-//         res.send(
-//           JSON.stringify({
-//             error: "Error",
-//           })
-//         );
-//       }
-//     }
-//   );
-// });
-
-// // mongoose.collection("customers").findOne({}, function (err, result) {
-// //   if (err) throw err;
-// //   console.log(result.name);
-// //   db.close();
-// // });
 
 app.listen(4000);
