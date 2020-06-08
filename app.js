@@ -7,7 +7,7 @@ const app = new express();
 app.use(express.json());
 
 mongoose.connect(
-  "<Add your MongoDB Connection String>",
+  "mongodb+srv://root:1234@iti-dbmyx.mongodb.net/CRUDOprations",
   { useNewUrlParser: true },
   (err) => {
     if (!err) {

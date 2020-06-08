@@ -27,6 +27,7 @@ router.post("/student", async (req, res) => {
     name: req.body.name,
     department: req.body.department,
     mark: req.body.mark,
+    remarks: req.body.remarks,
   });
   try {
     const savedStudent = await student.save();
