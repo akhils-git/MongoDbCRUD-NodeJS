@@ -19,5 +19,4 @@ mongoose.connect(
 );
 
 app.use("/college", studentRouter);
-
 app.listen(4000);
